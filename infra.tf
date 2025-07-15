@@ -14,4 +14,15 @@ resource "azurerm_resource_group" "example" {
   name     = "testResourceGroup1"
   location = "West US"
 }
-resource "azurerm_storage_account" "example" {}
+resource "azurerm_virtual_network" "example" {
+    name = "myvnet"
+    resource_group_name = "testResourceGroup1"
+    address_space = [  ]
+}
+resource "azurerm_storage_account" "example" {
+    name = "avistorage123"
+    location = "westus"
+    resource_group_name = "testResourceGroup1"
+    account_tier = "Standard"
+
+}
